@@ -1,0 +1,14 @@
+{
+  "name": "TV Subtitle Download",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Download subtitles of tv series",
+  "browser_action": {
+    "default_icon": "icon.ico",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "downloads",
+  	"http://www.tvsubtitles.net/"
+  ]
+}
