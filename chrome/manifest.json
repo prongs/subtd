@@ -9,6 +9,7 @@
   },
   "permissions": [
     "downloads",
+    "tabs",
   	"http://www.tvsubtitles.net/"
   ]
 }

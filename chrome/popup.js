@@ -41,6 +41,15 @@ function constructImageURL(photo) {
 var oldkey = null;
 document.body.innerHTML = "Please wait while we load the list of TV shows...";
 
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  if(changeInfo.url&&changeInfo.url.substr(changeInfo.url.length-3)=="zip")
+  {
+    setTimeout(function(){chrome.tabs.remove(tab.id);},1000);
+  }
+});
+
+
 function linkClicked(evt)
 {
   var a = evt.target;
@@ -56,7 +65,8 @@ function downloadClicked(evt)
   var seasons = target.previousElementSibling.previousElementSibling.value.split(",");
   for (var i = 0; i < seasons.length; i++) {
     var download_url = "http://tvsubtitles.net/download-"+show_id+"-"+seasons[i]+"-"+lang+".html";
-    chrome.downloads.download({url: download_url});
+    //chrome.downloads.download({url: download_url});
+    chrome.tabs.create({url:download_url, active:false});
   }
 }
 
