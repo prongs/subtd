@@ -164,4 +164,5 @@ pip-log.txt
 
 # chrome developer
 *.crx
+!subtd.crx
 *.zip

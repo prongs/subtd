@@ -7,8 +7,9 @@
     "default_icon": "icon.ico",
     "default_popup": "popup.html"
   },
+  "options_page": "options.html",
   "permissions": [
-    "downloads",
+    // "downloads",
     "tabs",
   	"http://www.tvsubtitles.net/"
   ]
